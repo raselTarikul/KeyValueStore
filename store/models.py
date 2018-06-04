@@ -11,5 +11,5 @@ class Storage(models.Model):
     value = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
     last_updated = models.DateTimeField(null=True)
-    ttl = models.IntegerField(default=15)
+    ttl = models.IntegerField(default=5)
     expiration_time = models.DateTimeField(null=True)
