@@ -55,10 +55,13 @@ def get_and_update_values(request, key):
     if request.method == 'PATCH':
         serializer = StorageSerializer(instance=value, data=request.data)
         if serializer.is_valid():
-            value.last_updated = datetime.datetime.now()
-            value.expiration_time = datetime.datetime.now() + datetime.timedelta(minutes=int(value.ttl))
-            value.save()
-            return Response(serializer.data)
+            inatance = serializer.save()
+            inatance.last_updated = datetime.datetime.now()
+            inatance.expiration_time = datetime.datetime.now() + datetime.timedelta(minutes=int(value.ttl))
+            inatance.save()
+            response_data = dict()
+            response_data[inatance.key] = inatance.value
+            return Response(response_data)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

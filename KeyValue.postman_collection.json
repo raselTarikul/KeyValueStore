@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "ed1cfd60-b53d-4996-855a-7f270f90c162",
+		"name": "KeyValue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add New value",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "key",
+							"value": "hello2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "Hello Worls 1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ttl",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/values/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"values",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "key",
+							"value": "hello7",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "Hello Worls 1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ttl",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/values/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"values",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/values/?key=hello6,hello7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"values",
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "hello6,hello7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Individual",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/values/hello7/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"values",
+						"hello7",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Object",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "key",
+							"value": "hello2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "Hello Worls 3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ttl",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/values/hello2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"values",
+						"hello2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
