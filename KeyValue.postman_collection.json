@@ -15,7 +15,7 @@
 					"formdata": [
 						{
 							"key": "key",
-							"value": "hello2",
+							"value": "key3",
 							"description": "",
 							"type": "text"
 						},
@@ -34,15 +34,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/values/",
+					"raw": "http://localhost:8000/values",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"values",
-						""
+						"values"
 					]
 				}
 			},
@@ -77,15 +76,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/values/",
+					"raw": "http://localhost:8000/values",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"values",
-						""
+						"values"
 					]
 				}
 			},
@@ -98,20 +96,19 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:8000/values/?key=hello6,hello7",
+					"raw": "http://localhost:8000/values?key=key2,key3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"values",
-						""
+						"values"
 					],
 					"query": [
 						{
 							"key": "key",
-							"value": "hello6,hello7"
+							"value": "key2,key3"
 						}
 					]
 				}
@@ -125,7 +122,7 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:8000/values/hello7/",
+					"raw": "http://localhost:8000/values/key2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -133,8 +130,7 @@
 					"port": "8000",
 					"path": [
 						"values",
-						"hello7",
-						""
+						"key2"
 					]
 				}
 			},
