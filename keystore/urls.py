@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from store.views import add_value
+from store.views import add_value, get_and_update_values
 
 urlpatterns = [
-     path('values/', add_value),
+    path('values/', add_value),
+    path('values/<int:id>', get_and_update_values),
 ]
