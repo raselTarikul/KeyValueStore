@@ -17,6 +17,9 @@ def add_value(request):
         storage.save()
         return Response(serializer.data, status.HTTP_201_CREATED)
     else:
-        return Response(serializer.error_messages, status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['GET', 'PATCH'])
+def get_and_update_values(request, id):
+    value = get_object_or_404(Storage, pk=id)
