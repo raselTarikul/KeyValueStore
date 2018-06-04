@@ -49,8 +49,8 @@ def add_value(request):
 
 
 @api_view(['GET', 'PATCH'])
-def get_and_update_values(request, id):
-    value = get_object_or_404(Storage, pk=id)
+def get_and_update_values(request, key):
+    value = get_object_or_404(Storage, key=key)
 
     if request.method == 'PATCH':
         serializer = StorageSerializer(instance=value, data=request.data)
@@ -62,8 +62,10 @@ def get_and_update_values(request, id):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    # elif request.method == 'GET' and not request.GET.get('key', None):
-    #     #remove expeire obejcts
-    #     Storage.objects.filter(expiration_time__le=datetime.datetime.now()).delete()
-    #     response
+    elif request.method == 'GET':
+        # remove expaired object
+        Storage.objects.filter(expiration_time__lt=datetime.datetime.now()).delete()
+        response_data = dict()
+        response_data[value.key] = value.value
+        return Response(response_data)
 

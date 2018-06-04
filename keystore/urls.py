@@ -19,5 +19,5 @@ from store.views import add_value, get_and_update_values
 
 urlpatterns = [
     path('values/', add_value),
-    path('values/<int:id>', get_and_update_values),
+    path('values/<str:key>', get_and_update_values),
 ]
